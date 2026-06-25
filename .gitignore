@@ -1,0 +1,13 @@
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos de desarrollo
+.vscode/
+.idea/
+
+# Por si acaso alguien lo compila mal
+build/
+install/
+log/
