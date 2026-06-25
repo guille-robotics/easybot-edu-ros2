@@ -1,0 +1,31 @@
+teleop_twist_joy_node:
+  ros__parameters:
+    # ----------------------------------------------------
+    # CONFIGURACIÓN PARA CONTROL DE PS4 (DualShock 4)
+    # ----------------------------------------------------
+    
+    # Ejes del joystick (Axes)
+    # 1: Palanca Izquierda (Arriba/Abajo) -> Avanzar/Retroceder
+    # 3: Palanca Derecha (Izquierda/Derecha) -> Girar el robot sobre su eje
+    axis_linear:  
+      x: 1
+    axis_angular: 
+      yaw: 3
+
+    # Botones (Buttons)
+    # 4 (L1) -> "Botón de Hombre Muerto" (Mantener para mover a velocidad normal)
+    # 5 (R1) -> "Botón Turbo" (Mantener para ir a velocidad máxima)
+    enable_button: 4
+    enable_turbo_button: 5
+
+    # Velocidad Normal (Segura para interiores)
+    scale_linear:
+      x: 0.5   # Metros por segundo
+    scale_angular:
+      yaw: 1.0 # Radianes por segundo
+
+    # Velocidad Turbo (Para probar en espacios abiertos)
+    scale_linear_turbo:
+      x: 1.0
+    scale_angular_turbo:
+      yaw: 2.0

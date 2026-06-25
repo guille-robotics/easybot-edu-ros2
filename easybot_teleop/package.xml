@@ -1,19 +1,16 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>easybot_description</name>
+  <name>easybot_teleop</name>
   <version>0.0.1</version>
-  <description>Modelos 3D, URDF y configuraciones visuales de RViz2 para el robot móvil easybot.</description>
+  <description>Paquete de teleoperación para easybot. Permite controlar el robot mediante un joystick por Bluetooth (ej. PS4).</description>
   <maintainer email="gcidampuero@gmail.com">guillermo</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <exec_depend>urdf</exec_depend>
-  <exec_depend>xacro</exec_depend>
-  <exec_depend>robot_state_publisher</exec_depend>
-  <exec_depend>joint_state_publisher_gui</exec_depend>
-  <exec_depend>rviz2</exec_depend>
+  <exec_depend>joy</exec_depend>
+  <exec_depend>teleop_twist_joy</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

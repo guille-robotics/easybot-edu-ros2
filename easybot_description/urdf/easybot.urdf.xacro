@@ -210,4 +210,10 @@
       <origin xyz="0.000000 0.000000 0.055000" rpy="0.000000 0.000000 0.000000"/>
     </joint>
 
+
+    <!-- ═══════════════════════════════════════════════
+       Archivo que conecta con el xacro de gazebo para realizar la simulacion
+  ═══════════════════════════════════════════════ -->
+  <xacro:include filename="easybot_gazebo.xacro" />
+
 </robot>
