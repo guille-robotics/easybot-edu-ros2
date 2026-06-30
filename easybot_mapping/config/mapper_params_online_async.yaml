@@ -1,0 +1,31 @@
+slam_toolbox:
+  ros__parameters:
+    # Configuraciones base
+    use_sim_time: true
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_link
+    scan_topic: /scan
+    mode: mapping # Mapeo en línea
+
+    # Parámetros del mapa
+    map_resolution: 0.05
+    map_size: 100 # Tamaño inicial del mapa
+
+    # Parámetros del Lidar y Odometría
+    # Actualiza el mapa cuando el robot se mueve esta distancia o ángulo
+    transform_publish_period: 0.02
+    map_update_interval: 2.0
+    minimum_travel_distance: 0.3
+    minimum_travel_heading: 0.3
+
+    # Configuración del escáner
+    scan_buffer_size: 10
+    scan_buffer_maximum_scan_distance: 10.0
+    link_match_minimum_response_fine: 0.1  
+    link_scan_maximum_distance: 1.5
+
+    # Resolución de búsqueda (Optimizado para un entorno estable)
+    resolution_m: 0.05
+    resolution_rad: 0.012
+    max_search_iterations: 10

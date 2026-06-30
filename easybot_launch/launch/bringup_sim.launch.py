@@ -9,10 +9,12 @@ def generate_launch_description():
     # 1. Obtener los directorios de instalación de ambos paquetes
     pkg_easybot_launch = get_package_share_directory('easybot_launch')
     pkg_easybot_teleop = get_package_share_directory('easybot_teleop')
+    pkg_easybot_mapping = get_package_share_directory('easybot_mapping')
 
     # 2. Definir las rutas exactas a los archivos launch que ya creaste
     gazebo_launch_path = os.path.join(pkg_easybot_launch, 'launch', 'gazebo.launch.py')
     joystick_launch_path = os.path.join(pkg_easybot_teleop, 'launch', 'joystick.launch.py')
+    mapping_launch_path = os.path.join(pkg_easybot_mapping, 'launch', 'mapping.launch.py')
 
     # 3. Preparar la inclusión de la simulación base (Gazebo + URDF + Bridge)
     gazebo_launch = IncludeLaunchDescription(
@@ -24,8 +26,14 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(joystick_launch_path)
     )
 
-    # 5. Ejecutar todo simultáneamente
+    # 5. Preparar la inclusión del Mapping
+    mapping_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(mapping_launch_path)
+    )
+
+    # 6. Ejecutar todo simultáneamente
     return LaunchDescription([
         gazebo_launch,
-        joystick_launch
+        #joystick_launch
+        mapping_launch
     ])

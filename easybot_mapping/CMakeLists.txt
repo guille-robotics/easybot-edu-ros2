@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(easybot_launch)
+project(easybot_mapping)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -11,14 +11,9 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-# -------------------------------------------------------------------
-# INSTALACIÓN DE RECURSOS
-# Copia las carpetas urdf y rviz al directorio 'share' de instalación
-# para que los launch files puedan encontrarlas.
-# -------------------------------------------------------------------
 install(DIRECTORY
   launch
-  worlds
+  config
   DESTINATION share/${PROJECT_NAME}/
 )
 
